@@ -12,7 +12,7 @@ This is a new _chapter_, and it's gonna be __very interesting__.
 Here is some interesting content.
 
 
-```python
+```{python}
 #| label: fig-polar
 #| fig-cap: "A line plot on a polar axis"
 
@@ -29,5 +29,26 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
+
+
+
+```{python}
+from cartiflette import carti_download
+shp_communes = carti_download(
+    values = ["France"],
+    crs = 4326,
+    borders = "DEPARTEMENT",
+    vectorfile_format="topojson",
+    simplification=50,
+    filter_by="FRANCE_ENTIERE_DROM_RAPPROCHES",
+    source="EXPRESS-COG-CARTO-TERRITOIRE",
+    year=2022)
+shp_communes.plot()
+```
+
+
+
+
+
 
 
